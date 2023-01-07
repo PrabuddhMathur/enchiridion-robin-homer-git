@@ -1,0 +1,47 @@
+#!/bin/bash
+
+audio_folder=/home/prabuddh/scripts/The_Enchiridion/
+text_file=/home/prabuddh/scripts/enchiridion.txt
+
+while getopts "spr" options; do
+	case $options in 
+		p)
+			eval nextopt=\${$OPTIND}
+			if [[ -n ${nextopt} && ${nextopt} != -* ]]; then
+			       	OPTIND=$((OPTIND+1))
+				num=${nextopt}
+			else
+
+				for i in `seq 1`
+				do
+					R=$(( $RANDOM % 54 + 0 ))
+				done
+
+				OPTARG=${OPTARG:-$R}
+				num=${OPTARG}
+			fi
+
+			case ${num} in
+				[1-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-3]) 
+					file=${audio_folder}${num}.mp3
+					pkill ffplay
+					ffplay -nodisp -autoexit ${file} > /dev/null 2>&1 & 
+					sed -ne "/^${num}\./,/^$(( $num + 1 ))/p" ${text_file} | sed -e "/$(( $num + 1 ))/d"
+					;;
+				*)echo "Please provide a number in between 1-53. Invalid number '${num}'."
+				;;
+		 	 esac
+		 	 ;;
+		s) pkill ffplay
+			;;
+
+		r) status=`ps aux | grep 'ffplay' | head -1 | awk '$8~/^T/{print $8}'`
+		   pid=`pgrep ffplay`
+		   if [[ $status == '' ]]; then
+			   kill -s SIGSTOP $pid
+		   else 
+			   kill -s SIGCONT $pid
+
+		   fi
+	esac
+done
