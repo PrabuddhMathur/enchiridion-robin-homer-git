@@ -1,7 +1,7 @@
 #!/bin/bash
 
-audio_folder=/home/prabuddh/scripts/The_Enchiridion/
-text_file=/home/prabuddh/scripts/enchiridion.txt
+audio_folder=/usr/bin/enchiridion-robin-homer-git/The_Enchiridion/
+text_file=/usr/bin/enchiridion-robin-homer-git/enchiridion.txt
 
 while getopts "spr" options; do
 	case $options in 
