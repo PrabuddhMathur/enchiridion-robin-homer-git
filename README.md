@@ -24,7 +24,3 @@ Step 1: Type `yay -S enchiridion-robin-homer-git` to install it directly.
 `enchiridion -r`: To pause or resume the currently playing chapter.
 
 `enchiridion -s`: To stop the current playing chapter.
-
-
-
-
