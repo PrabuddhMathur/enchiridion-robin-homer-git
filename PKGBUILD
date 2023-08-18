@@ -29,5 +29,5 @@ package() {
     install -Dm755 enchiridion "$pkgdir/usr/bin/enchiridion"
 
     # If there is a LICENSE file, copy it to the standard directory for licenses
-    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/${pkgname%-git}/LICENSE"
+    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/${pkgname%}/LICENSE"
 }
