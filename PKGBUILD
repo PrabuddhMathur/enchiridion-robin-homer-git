@@ -1,7 +1,7 @@
 # Maintainer: Prabuddh Mathur <prabuddhmathur2002@gmail.com>
 
 pkgname=enchiridion-robin-homer-git
-pkgver=1.0.r17.0a11c03
+pkgver=1.0.r00.0000000
 pkgrel=1
 pkgdesc="A script to speak a random or specific verse of The Enchiridion of Epictetus narrated by Robin Homer of Vox Stoica on Youtube."
 arch=('x86_64' 'i686')
