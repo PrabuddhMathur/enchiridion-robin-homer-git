@@ -7,7 +7,7 @@ Step 1: Clone the git repository with `git clone https://github.com/PrabuddhMath
 
 Step 2: `cd enchiridion-robin-homer-git`
 
-Step 3: `make install` to install it (installs to /usr/bin & ~/.local/share/The\_Enchiridion)
+Step 3: `make install` to install it (installs to /usr/bin & /usr/share)
 
 ## Install via AUR
 
@@ -25,7 +25,7 @@ Step 3: `makepkg -si`
 
 ## Usage
 
-`enchiridion -p`: To randomly play any chapter of The Enchiridion.
+`enchiridion -p`: To randomly play any chapter of The Enchiridion; this is the default option if no argument is passed.
 
 `enchiridion -p <number>`: To play specific chapters of The Enchiridion. Range between 1 to 53.
 
